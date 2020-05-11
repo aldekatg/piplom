@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~9.1.3",
     "@angular/platform-browser-dynamic": "~9.1.3",
     "@angular/router": "~9.1.3",
+    "@material/checkbox": "^6.0.0",
     "angularfire2": "^5.4.2",
     "firebase": "^7.14.2",
     "query-string": "^6.12.1",

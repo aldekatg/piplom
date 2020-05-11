@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import {
+  MatTreeFlattener,
+  MatTreeFlatDataSource,
+} from '@angular/material/tree';
 
 export interface PeriodicElement {
   name: string;
@@ -6,6 +11,38 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
+interface FoodNode {
+  name: string;
+  children?: FoodNode[];
+}
+
+const TREE_DATA: FoodNode[] = [
+  {
+    name: 'Fruit',
+    children: [{ name: 'Apple' }, { name: 'Banana' }, { name: 'Fruit loops' }],
+  },
+  {
+    name: 'Vegetables',
+    children: [
+      {
+        name: 'Green',
+        children: [{ name: 'Broccoli' }, { name: 'Brussels sprouts' }],
+      },
+      {
+        name: 'Orange',
+        children: [{ name: 'Pumpkins' }, { name: 'Carrots' }],
+      },
+    ],
+  },
+];
+
+/** Flat node with expandable and level information */
+interface ExampleFlatNode {
+  expandable: boolean;
+  name: string;
+  level: number;
+}
+
 const ELEMENT_DATA: PeriodicElement[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
   { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
@@ -24,11 +61,39 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
+  private _transformer = (node: FoodNode, level: number) => {
+    return {
+      expandable: !!node.children && node.children.length > 0,
+      name: node.name,
+      level: level,
+    };
+  };
+  treeControl = new FlatTreeControl<ExampleFlatNode>(
+    (node) => node.level,
+    (node) => node.expandable
+  );
+
+  treeFlattener = new MatTreeFlattener(
+    this._transformer,
+    (node) => node.level,
+    (node) => node.expandable,
+    (node) => node.children
+  );
+
+  dataSourceTree = new MatTreeFlatDataSource(
+    this.treeControl,
+    this.treeFlattener
+  );
+
   showFiller = false;
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  constructor() {}
+  constructor() {
+    this.dataSourceTree.data = TREE_DATA;
+    console.log(TREE_DATA);
+  }
+  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
   ngOnInit(): void {}
 }

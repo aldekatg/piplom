@@ -14,28 +14,37 @@ import { MatTreeModule } from '@angular/material/tree';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
-import { CommonModule } from '@angular/common';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatListModule } from '@angular/material/list';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { AuthModule } from './auth/auth.module';
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [AppComponent, HomePageComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-    MatButtonModule,
-    MatCardModule,
-    CommonModule,
-    MatIconModule,
-    MatSidenavModule,
     HttpClientModule,
+
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatRadioModule,
+    MatListModule,
     MatDividerModule,
-    FormsModule,
+    CdkTreeModule,
+    MatProgressBarModule,
+    MatCardModule,
+    MatFormFieldModule,
     MatTableModule,
     MatTreeModule,
-    MatFormFieldModule,
-    MatToolbarModule,
+    MatSidenavModule,
+    AuthModule,
+
+    RouterModule.forRoot(routes),
   ],
   bootstrap: [AppComponent],
 })

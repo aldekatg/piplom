@@ -9,7 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class SignUpComponent implements OnInit {
   form: FormGroup;
+  checked = false;
+  indeterminate = false;
   labelPosition: 'before' | 'after' = 'after';
+  disabled = false;
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {

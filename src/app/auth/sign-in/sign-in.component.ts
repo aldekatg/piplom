@@ -10,8 +10,7 @@ import { Routes, Router } from '@angular/router';
 export class SignInComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,
-    private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -23,7 +22,7 @@ export class SignInComponent implements OnInit {
   login() {
     console.log('login', this.form.value);
     if (this.form.get('email').value == 'tagay.aldiyar@gmail.com') {
-      this.router.navigate(['']);
+      this.router.navigate(['home']);
     }
   }
 }
