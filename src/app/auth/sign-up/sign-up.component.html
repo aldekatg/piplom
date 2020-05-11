@@ -7,12 +7,13 @@
       </mat-form-field>
 
       <section class="example-section">
-        <label class="example-margin" style="font-weight: bold">Выберите свое предприятие:</label>
+        <label class="example-margin" style="font-weight: bold; font-size: 17px ;margin-bottom: 10px">Выберите свое
+          предприятие:</label>
         <mat-radio-group [(ngModel)]="labelPosition" formControlName="type">
-          <mat-radio-button class="example-margin" value="kotl">Котельне производство
-          </mat-radio-button>
+          <mat-radio-button class="example-margin" value="kotl">Котельное производство</mat-radio-button>
           <mat-radio-button class="example-margin" value="tec">ТЭЦ</mat-radio-button>
           <mat-radio-button class="example-margin" value="elstan">Электростанция</mat-radio-button>
+          <mat-radio-button class="example-margin" value="neft">Нефте-переработка</mat-radio-button>
         </mat-radio-group>
       </section>
 

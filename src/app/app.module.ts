@@ -9,30 +9,57 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {routes} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatTreeModule} from '@angular/material/tree';
 import {HomePageComponent} from './home-page/home-page.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatListModule} from '@angular/material/list';
 import {CdkTreeModule} from '@angular/cdk/tree';
 import {AuthModule} from './auth/auth.module';
+import {CotlCalcComponent} from './cotl-calc/cotl-calc.component';
+import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule, FormsModule, FormGroup, ControlContainer} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
-import { CotlCalcComponent } from './cotl-calc/cotl-calc.component';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRippleModule, MatNativeDateModule} from '@angular/material/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatTableModule} from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTreeModule} from '@angular/material/tree';
+import {PortalModule} from '@angular/cdk/portal';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent, CotlCalcComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatAutocompleteModule,
     HttpClientModule,
 
     MatToolbarModule,
+    MatSelectModule,
+    MatRippleModule,
+    MatCheckboxModule,
+    MatNativeDateModule,
+    MatTooltipModule,
     MatButtonModule,
+    CommonModule,
+    ScrollingModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    PortalModule,
+    MatTabsModule,
+
+    MatStepperModule,
+    ScrollingModule,
     MatIconModule,
     MatMenuModule,
     MatRadioModule,
@@ -48,6 +75,7 @@ import { CotlCalcComponent } from './cotl-calc/cotl-calc.component';
     AuthModule,
 
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],
 })

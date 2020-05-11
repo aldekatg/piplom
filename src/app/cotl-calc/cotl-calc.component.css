@@ -4,3 +4,23 @@
   display: flex;
   justify-content: center;
 }
+
+.example-stretched-tabs {
+  height: 80%;
+  width: 80%;
+}
+
+.button-top {
+  position: relative;
+  z-index: 1;
+  bottom: 45%;
+  left: 5%;
+}
+
+table {
+  width: 100%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}

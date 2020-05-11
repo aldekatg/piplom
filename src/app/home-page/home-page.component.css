@@ -1,40 +1,39 @@
 :host {
-    flex-grow: 1;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .example-container {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .example-sidenav {
-    padding: 20px;
+  padding: 20px;
 }
 
 table {
-    height: 80%;
-    width: 80%;
+  height: 80%;
+  width: 80%;
 }
-
 .button-top {
-    position: relative;
-    z-index: 1;
-    bottom: 45%;
-    left: 5%;
+  position: relative;
+  z-index: 1;
+  bottom: 45%;
+  left: 5%;
 }
 
 .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
+  display: flex;
+  justify-content: center;
+  width: 120px;
 }

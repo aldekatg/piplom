@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder} from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,12 +9,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class SignUpComponent implements OnInit {
   form: FormGroup;
-  checked = false;
-  indeterminate = false;
   labelPosition: 'before' | 'after' = 'after';
-  disabled = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -28,5 +26,6 @@ export class SignUpComponent implements OnInit {
 
   register() {
     console.log('register', this.form.value);
+    this.router.navigate(['home']);
   }
 }
