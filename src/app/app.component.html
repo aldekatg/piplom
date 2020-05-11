@@ -1,0 +1,15 @@
+<mat-toolbar class="flex-tool" color="primary">
+    <a mat-button routerLink="/">
+        РТЭПП
+    </a>
+    <a></a>
+    <span class="flex-grow"></span>
+    <a mat-button [routerLink]="['/auth']">
+        <mat-icon>account_circle</mat-icon>Войти
+    </a>
+
+    <a mat-button [routerLink]="['/auth/sign-up']">
+        <mat-icon>directions_walks</mat-icon>Зарегестрироваться
+    </a>
+</mat-toolbar>
+<router-outlet></router-outlet>

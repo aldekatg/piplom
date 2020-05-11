@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "piplom-a951a": {
+      "hosting": {
+        "piplom": [
+          "piplom-a951a"
+        ]
+      }
+    }
+  }
+}

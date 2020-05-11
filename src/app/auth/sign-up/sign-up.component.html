@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title class="text-center">Регистрация</mat-card-title>
+    <mat-card-content>
+        <form class="login-form" [formGroup]="form" (submit)=register()>
+            <mat-form-field class="form-width">
+                <input matInput placeholder="E-mail" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field class="form-width">
+                <input matInput type="password" placeholder="Пароль" formControlName="password">
+            </mat-form-field>
+
+            <mat-form-field class="form-width">
+                <input matInput type="password" placeholder="Подтверждение пароля" formControlName="password_confirm">
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary">Зарегестрироваться</button>
+        </form>
+    </mat-card-content>
+</mat-card>
