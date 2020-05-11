@@ -1,26 +1,30 @@
 <mat-card>
-    <mat-card-title class="text-center">Регистрация</mat-card-title>
-    <mat-card-content>
-        <form class="login-form" [formGroup]="form" (submit)=register()>
-            <mat-form-field class="form-width">
-                <input matInput placeholder="E-mail" formControlName="email">
-            </mat-form-field>
+  <mat-card-title class="text-center">Регистрация</mat-card-title>
+  <mat-card-content>
+    <form class="login-form" [formGroup]="form" (submit)=register()>
+      <mat-form-field class="form-width">
+        <input matInput placeholder="E-mail" formControlName="email">
+      </mat-form-field>
 
-            <label class="example-margin">Align:</label>
-            <mat-radio-group [(ngModel)]="labelPosition">
-                <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
-                <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
-            </mat-radio-group>
+      <section class="example-section">
+        <label class="example-margin" style="font-weight: bold">Выберите свое предприятие:</label>
+        <mat-radio-group [(ngModel)]="labelPosition" formControlName="type">
+          <mat-radio-button class="example-margin" value="kotl">Котельне производство
+          </mat-radio-button>
+          <mat-radio-button class="example-margin" value="tec">ТЭЦ</mat-radio-button>
+          <mat-radio-button class="example-margin" value="elstan">Электростанция</mat-radio-button>
+        </mat-radio-group>
+      </section>
 
-            <mat-form-field class="form-width">
-                <input matInput type="password" placeholder="Пароль" formControlName="password">
-            </mat-form-field>
+      <mat-form-field class="form-width">
+        <input matInput type="password" placeholder="Пароль" formControlName="password">
+      </mat-form-field>
 
-            <mat-form-field class="form-width">
-                <input matInput type="password" placeholder="Подтверждение пароля" formControlName="password_confirm">
-            </mat-form-field>
+      <mat-form-field class="form-width">
+        <input matInput type="password" placeholder="Подтверждение пароля" formControlName="password_confirm">
+      </mat-form-field>
 
-            <button type="submit" mat-raised-button color="primary">Зарегестрироваться</button>
-        </form>
-    </mat-card-content>
+      <button type="submit" mat-raised-button color="primary">Зарегестрироваться</button>
+    </form>
+  </mat-card-content>
 </mat-card>

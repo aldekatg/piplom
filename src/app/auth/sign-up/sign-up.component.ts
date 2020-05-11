@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,13 +13,16 @@ export class SignUpComponent implements OnInit {
   indeterminate = false;
   labelPosition: 'before' | 'after' = 'after';
   disabled = false;
-  constructor(private formBuilder: FormBuilder) {}
+
+  constructor(private formBuilder: FormBuilder) {
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       email: '',
       password: '',
       password_confirm: '',
+      type: '',
     });
   }
 
